@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Github_Actions_Test_Api", "Github_Actions_Test_Api\Github_Actions_Test_Api.csproj", "{E44D0385-4F8F-48A5-8CF3-CB42C7E54C00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E44D0385-4F8F-48A5-8CF3-CB42C7E54C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E44D0385-4F8F-48A5-8CF3-CB42C7E54C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E44D0385-4F8F-48A5-8CF3-CB42C7E54C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E44D0385-4F8F-48A5-8CF3-CB42C7E54C00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DDF7842-7232-4238-8E50-9E58A6C6DC8E}
+	EndGlobalSection
+EndGlobal
