@@ -5,6 +5,9 @@ on:
   push:
     branches: 
     - master
+env:
+  AZURE_WEB_APP_NAME: 'GitHub-Actions-TestApi'
+  AZURE_WEB_PACKAGE_NAME: './publish'
     
 jobs:
   publish:
@@ -26,4 +29,12 @@ jobs:
       
     - name: Publish
       run: dotnet publish ./Github_Actions_Test_Api.sln --configuration release --no-build
+      
+    - name: Deployment
+      uses: actions/webapps-deploy@v2
+      with:
+        app-name: ${{ env.AZURE_WEB_APP_NAME }}
+        publish-profile: ${{ secrets.APP_PROFILE_SECRET }}
+        package: ${{ env.AZURE_WEB_PACKAGE_NAME }}
+      
     
