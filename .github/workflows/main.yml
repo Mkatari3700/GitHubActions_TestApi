@@ -28,7 +28,7 @@ jobs:
       run: dotnet build ./Github_Actions_Test_Api.sln --configuration release --no-restore
       
     - name: Publish
-      run: dotnet publish ./Github_Actions_Test_Api.sln --configuration release --no-build
+      run: dotnet publish ./Github_Actions_Test_Api.sln --configuration release --no-build --output '${{ env.AZURE_WEB_PACKAGE_NAME }}'
       
     - name: Deployment
       uses: azure/webapps-deploy@v2
