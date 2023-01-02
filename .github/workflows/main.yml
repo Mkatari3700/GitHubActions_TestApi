@@ -1,0 +1,29 @@
+name: Publish
+
+on: 
+  workflow_dispatch:
+  push:
+    branches: 
+    - master
+    
+jobs:
+  publish:
+   runs-on: ubuntu-latest
+   
+   steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup .Net
+      uses: actions/setup-dotnet@v3
+      with: 
+        dotnet-version: '6.0.x'
+        
+    - name: Restore
+      run: dotnet restore ./Github_Actions_Test_Api.sln
+      
+    - name: build
+      run: dotnet build ./Github_Actions_Test_Api.sln --configuration release --no-restore
+      
+    - name: Publish
+      run: dotnet publish ./Github_Actions_Test_Api.sln --configuration release --no-build
+    
