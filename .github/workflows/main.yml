@@ -8,6 +8,7 @@ on:
 env:
   AZURE_WEB_APP_NAME: 'GitHub-Actions-TestApi'
   AZURE_WEB_PACKAGE_NAME: './publish'
+  ARTIFACT_FOLDER: './Artifact'
     
 jobs:
   publish:
@@ -29,7 +30,17 @@ jobs:
       
     - name: Publish
       run: dotnet publish ./Github_Actions_Test_Api.sln --configuration release --no-build --output '${{ env.AZURE_WEB_PACKAGE_NAME }}'
-      
+    
+    - name: Upload GitHub Pages artifact
+      uses: actions/upload-pages-artifact@v1.0.7
+      with:
+      # Artifact name
+        name: DotnetAppArtificat # optional, default is github-pages
+      # Path of the directory containing the static assets.
+        path: ${{ env.ARTIFACT_FOLDER }} # default is _site/
+      # Duration after which artifact will expire in days.
+        #retention-days: 0 # optional, default is 1  
+    
     - name: Deployment
       uses: azure/webapps-deploy@v2
       with:
